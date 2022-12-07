@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Eshopping.web.Models
+{
+    public class Category
+    {
+        public int Id { get; set; }
+        [Required,MinLength(2,ErrorMessage ="MInimum Length is 2")]
+        [RegularExpression(@"^[a-zA-Z-]+$",ErrorMessage ="Only letters are allowed")]
+        public string Name { get; set; }
+
+        public string Slug { get; set; }
+        public int Sorting { get; set; }
+
+
+
+    }
+}
